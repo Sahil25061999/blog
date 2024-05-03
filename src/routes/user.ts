@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { UserController } from "../controller/user";
-import { signinValidation, signupValidation } from "../types";
+import { signinValidation, signupValidation } from "@sahil2506/blog-types";
 import { validateRequestMiddleware } from "../middleware";
 
 const router = Router();

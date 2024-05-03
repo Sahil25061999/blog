@@ -1,7 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import { verifyToken } from "../utils";
 import { UserRepositories } from "../repositories/user";
-import type { TSignInValidation } from "../types";
+import type { TSignInValidation } from "@sahil2506/blog-types";
 
 export const validateUserMiddleware = async (
   req: Request,

@@ -1,5 +1,5 @@
 import { UserRepositories } from "../repositories/user";
-import { type TSignInValidation, type TSignUpValidation } from "../types";
+import { type TSignInValidation, type TSignUpValidation } from "@sahil2506/blog-types";
 import {
   generateHashedPassword,
   generateToken,

@@ -3,7 +3,7 @@ import type {
   TBlogIdValidation,
   TBlogUpdateValidation,
   TBlogValidation,
-} from "../types";
+} from "@sahil2506/blog-types";
 
 export class BlogController {
   userId: string;

@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import type { TSignUpValidation } from "../types";
+import type { TSignUpValidation } from "@sahil2506/blog-types";
 
 const prisma = new PrismaClient();
 

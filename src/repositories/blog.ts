@@ -3,7 +3,7 @@ import type {
   TBlogIdValidation,
   TBlogUpdateValidation,
   TBlogValidation,
-} from "../types";
+} from "@sahil2506/blog-types";
 const prisma = new PrismaClient();
 
 export class BlogRepository {

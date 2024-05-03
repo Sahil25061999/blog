@@ -8,7 +8,7 @@ import {
   blogUpdateValidation,
   blogValidation,
   type TBlogIdValidation,
-} from "../types";
+} from "@sahil2506/blog-types";
 import { BlogController } from "../controller/blog";
 
 const router = Router();
