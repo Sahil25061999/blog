@@ -23,7 +23,7 @@ export const validateUserMiddleware = async (
     req.headers.userId = userId;
     next();
   } catch (e: any) {
-    res.status(422).json({
+    res.status(403).json({
       success: false,
       message: e.message,
     });

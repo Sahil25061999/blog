@@ -6,6 +6,6 @@ import { validateUserMiddleware } from "../middleware";
 const router = Router();
 
 router.use("/user", userRouter);
-router.use("/blog", validateUserMiddleware,blogRouter);
+router.use("/blog",blogRouter);
 
 export default router;
