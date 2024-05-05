@@ -55,6 +55,13 @@ export class BlogRepository {
         where: {
           id: blogId.id,
         },
+        include:{
+          author:{
+            select:{
+              username:true,
+            }
+          }
+        }
       });
       return blog;
     } catch (e: any) {
@@ -66,11 +73,17 @@ export class BlogRepository {
     try {
       const blogs = await prisma.post.findMany({
         select: {
+          id: true,
           title: true,
           content: true,
+          author: {
+            select: {
+              username: true,
+            },
+          },
         },
       });
-      
+
       return blogs;
     } catch (e) {
       throw e;
