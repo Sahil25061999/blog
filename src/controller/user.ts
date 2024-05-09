@@ -1,12 +1,12 @@
 import { UserRepositories } from "../repositories/user";
 import { type TSignInValidation, type TSignUpValidation } from "@sahil2506/blog-types";
-import {
-  generateHashedPassword,
-  generateToken,
-  verifyPassword,
-} from "../utils";
+import { generateHashedPassword, generateToken, verifyPassword } from "../utils";
 
 export class UserController {
+  userId: string;
+  constructor(userId: string) {
+    this.userId = userId;
+  }
   static async createUser(req: TSignUpValidation) {
     try {
       const userExist = await UserRepositories.getUserByEmail(req.email);
@@ -60,6 +60,27 @@ export class UserController {
         success: true,
         message: "User Signed In successfully",
         data: { token },
+      };
+    } catch (e: any) {
+      return {
+        success: false,
+        message: e.message,
+      };
+    }
+  }
+
+  async getUser() {
+    try {
+      const user = await UserRepositories.getUserById(this.userId);
+      if (!user) {
+        return {
+          success: false,
+          message: "No user found",
+        };
+      }
+      return {
+        success: true,
+        data: user,
       };
     } catch (e: any) {
       return {
